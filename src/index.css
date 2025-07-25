@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 3px;
+    height: -2px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #6556CD;
+    border-radius: 3px;
+}
+/* SELECT STYLES */
+.select {
+  position: relative;
+  width: 20em;
+  height: 3em;
+  background: #27272a;
+  border-radius: 0.25em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* ACTUAL SELECT */
+.select select {
+  width: 100%;
+  height: 100%;
+  padding: 0 2.5em 0 0.5em;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 1em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* ARROW */
+.select::after {
+  content: "\25BC"; /* ▼ */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  pointer-events: none; /* Prevent arrow from blocking clicks */
+  background: #27272a;
+  transition: color 0.3s ease;
+}
+
+.select:hover::after {
+  color: #6556CD;
+}
+
+/* VISIBLE OPTIONS */
+select option {
+  color: black;
+  background-color: white;
+}
